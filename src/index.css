@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-mac-bg text-mac-text font-sans overflow-hidden;
+  }
+  .dark body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer components {
+  .mac-window {
+    @apply bg-mac-window backdrop-blur-xl border border-mac-border rounded-lg shadow-mac-window overflow-hidden;
+  }
+
+  .mac-dock {
+    @apply flex items-center justify-center gap-1 px-3 py-1 bg-mac-window/20 backdrop-blur-xl border border-mac-border rounded-xl shadow-mac-dock;
+  }
+
+  .dock-icon {
+    @apply transition-all duration-200 ease-in-out hover:scale-110;
+  }
+
+  .window-title-bar {
+    @apply flex items-center px-4 py-2 bg-mac-window/90 border-b border-mac-border;
+  }
+
+  .window-control {
+    @apply w-3 h-3 rounded-full cursor-pointer mr-2 flex items-center justify-center hover:opacity-80;
+  }
+
+  .widget {
+    @apply mac-window p-4 min-w-[200px] min-h-[150px];
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-md transition-all duration-200 focus:outline-none focus:ring-2;
+  }
+
+  .btn-primary {
+    @apply bg-mac-highlight text-white hover:bg-mac-highlight/90 focus:ring-mac-highlight/50;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 focus:ring-gray-200/50;
+  }
+
+  .glass-input {
+    @apply bg-white/50 border border-mac-border rounded-md px-3 py-2 backdrop-blur-sm w-full focus:outline-none focus:ring-2 focus:ring-mac-highlight/50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Make windows draggable from the title bar only */
+.draggable-handle {
+  cursor: move;
+}
