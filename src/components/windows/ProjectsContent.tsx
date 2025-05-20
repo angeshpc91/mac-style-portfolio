@@ -65,7 +65,7 @@ const ProjectsContent: React.FC = () => {
         technologies: ["React", "Framer Motion", "JavaScript", "Tailwind CSS"],
         image: MacPortfolio,
         githubUrl: "https://github.com/angeshpc91/mac-style-portfolio.git",
-        liveUrl: "https://project1.example.com",
+        liveUrl: "#",
       },
       {
         id: 2,
@@ -194,7 +194,7 @@ const ProjectsContent: React.FC = () => {
                   </a>
                   <a
                     href={project.liveUrl}
-                    target="_blank"
+                    target={project.id === 1 ? "" : "_blank"}
                     rel="noopener noreferrer"
                     className="p-2 rounded-full bg-mac-highlight text-white hover:bg-mac-highlight/90 transition-colors"
                     aria-label="View live project"
