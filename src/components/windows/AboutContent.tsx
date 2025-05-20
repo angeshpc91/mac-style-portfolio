@@ -41,7 +41,7 @@ const AboutContent: React.FC = () => {
             </li>
             <li>
               <span className="font-medium">
-                Senior Frontend Developer at Fluent Health
+                Senior Software Engineer at Fluent Health
               </span>{" "}
               - Implemented FHIR standards and GraphQL in healthcare
               applications using React and Next.js.
