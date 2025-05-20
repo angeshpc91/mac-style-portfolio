@@ -37,12 +37,14 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
       className="desktop-icon flex flex-col items-end justify-center p-2 cursor-pointer group"
       onClick={onClick}
     >
-      <div className="icon-container bg-white/10 backdrop-blur-sm rounded-xl p-3 mb-2 group-hover:bg-white/20 transition-colors">
-        {renderIcon()}
+      <div className="flex flex-col items-center">
+        <div className="icon-container bg-white/10 backdrop-blur-sm rounded-xl p-3 mb-2 group-hover:bg-white/20 transition-colors">
+          {renderIcon()}
+        </div>
+        <span className="text-xs text-white bg-black/50 px-2 py-1 rounded-md backdrop-blur-sm">
+          {title}
+        </span>
       </div>
-      <span className="text-xs text-white bg-black/50 px-2 py-1 rounded-md backdrop-blur-sm">
-        {title}
-      </span>
     </div>
   );
 };
