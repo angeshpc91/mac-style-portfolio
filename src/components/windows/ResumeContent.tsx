@@ -6,6 +6,7 @@ import {
   Calendar,
   Download,
 } from "lucide-react";
+import angeshcPdf from "./assets/Angesh_Chettiar.pdf";
 
 const ResumeContent: React.FC = () => {
   const workExperience = [
@@ -106,6 +107,15 @@ const ResumeContent: React.FC = () => {
     },
   ];
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = angeshcPdf;
+    link.download = "Angesh_Chettiar.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="resume-content h-full overflow-auto">
       <div className="flex justify-between items-start mb-6">
@@ -118,7 +128,10 @@ const ResumeContent: React.FC = () => {
             Principal Lead (Frontend / Full-Stack) with 11+ years of experience
           </p>
         </div>
-        <button className="btn btn-primary flex items-center">
+        <button
+          className="btn btn-primary flex items-center"
+          onClick={handleDownload}
+        >
           <Download className="w-4 h-4 mr-1" />
           Download PDF
         </button>
