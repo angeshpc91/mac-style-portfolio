@@ -7,6 +7,7 @@ import {
   Linkedin,
   Github as GitHub,
 } from "lucide-react";
+import emailjs from "emailjs-com";
 
 const ContactContent: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,10 @@ const ContactContent: React.FC = () => {
     email: "",
     subject: "",
     message: "",
+    time: new Date().toLocaleString(),
+    from_website: "From: mac-style-portfolio.netlify.app",
   });
+
   const [status, setStatus] = useState<{
     message: string;
     type: "success" | "error" | "";
@@ -33,26 +37,41 @@ const ContactContent: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setStatus({ message: "", type: "" });
 
-    // Simulate API call
-    setTimeout(() => {
-      // In a real app, you would send the form data to your backend
-      setStatus({
-        message: "Message sent successfully! I will get back to you soon.",
-        type: "success",
-      });
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-      setLoading(false);
-    }, 1500);
+    const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const EMAILJS_USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
+
+    emailjs
+      .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, formData, EMAILJS_USER_ID)
+      .then(
+        () => {
+          setStatus({
+            type: "success",
+            message:
+              "Thank you for contacting me. I will get back to you soon.",
+          });
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            subject: "",
+            time: new Date().toLocaleString(),
+            from_website: "From: mac-style-portfolio.netlify.app",
+          });
+          setLoading(false);
+        },
+        (error) => {
+          setStatus({
+            type: "error",
+            message: "Failed to send message. Please try again later.",
+          });
+          setLoading(false);
+        }
+      );
   };
 
   return (
