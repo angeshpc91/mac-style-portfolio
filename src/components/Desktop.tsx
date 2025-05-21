@@ -13,11 +13,11 @@ import CurrentProjectWidget from "./widgets/CurrentProjectWidget";
 import DraggableWidget from "./DraggableWidget";
 import { format } from "date-fns";
 import ThemeSwitcher from "./ThemeSwitcher";
-import { useTheme } from "../context/ThemeContext"; // <-- Add this import
+import { useTheme } from "../context/ThemeContext";
 
 const Desktop: React.FC = () => {
   const { apps, openApp, focusApp } = useApps();
-  const { theme } = useTheme(); // <-- Use the theme
+  const { theme } = useTheme();
 
   // Map theme to background style
   const backgroundStyles: Record<string, React.CSSProperties> = {
@@ -45,36 +45,15 @@ const Desktop: React.FC = () => {
     >
       {/* Desktop Icons */}
       <div className="grid grid-cols-1 gap-4">
-        <DesktopIcon
-          id="about"
-          title="About Me"
-          icon="user"
-          onClick={() => openApp("about")}
-        />
-        <DesktopIcon
-          id="projects"
-          title="Projects"
-          icon="folders"
-          onClick={() => openApp("projects")}
-        />
-        <DesktopIcon
-          id="skills"
-          title="Skills"
-          icon="codepen"
-          onClick={() => openApp("skills")}
-        />
-        <DesktopIcon
-          id="resume"
-          title="Resume"
-          icon="file-text"
-          onClick={() => openApp("resume")}
-        />
-        <DesktopIcon
-          id="contact"
-          title="Contact"
-          icon="mail"
-          onClick={() => openApp("contact")}
-        />
+        {apps.map(({ id, title, icon }) => (
+          <DesktopIcon
+            key={id}
+            id={id}
+            title={title}
+            icon={icon}
+            onClick={() => openApp(id)}
+          />
+        ))}
       </div>
 
       {/* Desktop Widgets */}
