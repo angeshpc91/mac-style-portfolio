@@ -11,7 +11,7 @@ import angeshcPdf from "./assets/Angesh_Chettiar.pdf";
 const ResumeContent: React.FC = () => {
   const workExperience = [
     {
-      title: "Principal Lead",
+      title: "Principal Engineer",
       company: "Unico Connect",
       location: "Mumbai",
       period: "February 2025 — Current",
@@ -29,7 +29,7 @@ const ResumeContent: React.FC = () => {
       location: "Mumbai",
       period: "June 2024 — February 2025",
       responsibilities: [
-        "Implemented FHIR standards and GraphQL in healthcare applications using React and Next.js to ensure interoperability, data consistency, and modern API integration.",
+        "Implemented FHIR standards and GraphQL in healthcare applications using TypeScript, React and Next.js to ensure interoperability, data consistency, and modern API integration, also incorporated RBAC (Role Based Access Control) from scratch.",
         "Developed reusable UI components and led a team of 5 developers with a focus on analytics features and maintaining architectural integrity to enhance code reusability, performance, and project scalability.",
       ],
     },
@@ -125,7 +125,8 @@ const ResumeContent: React.FC = () => {
             Resume
           </h1>
           <p className="text-mac-text-secondary">
-            Principal Lead (Frontend / Full-Stack) with 11+ years of experience
+            Principal Engineer (Frontend / Full-Stack) with 11+ years of
+            experience
           </p>
         </div>
         <button

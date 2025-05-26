@@ -94,7 +94,7 @@ const Desktop: React.FC = () => {
       <div className="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-4 py-1 text-xs bg-mac-window/70 backdrop-blur-xl border-b border-mac-border">
         <div className="flex items-center space-x-4">
           <span className="font-semibold">Angesh Chettiar</span>
-          <span>Principal Lead</span>
+          <span>Principal Engineer</span>
         </div>
         <div className="flex items-center space-x-4">
           <span>{format(new Date(), "EEE MMM d")}</span>

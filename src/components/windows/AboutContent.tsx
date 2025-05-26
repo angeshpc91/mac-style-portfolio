@@ -18,7 +18,7 @@ const AboutContent: React.FC = () => {
           <p className="text-mac-text-secondary mb-4">
             A proven engineering leader with experience in building robust,
             scalable frontend systems and driving product success across
-            fintech, healthtech, and digital platforms. As a Principal Lead,
+            fintech, healthtech, and digital platforms. As a Principal Engineer,
             I've led cross-functional teams at Freecharge (AXIS Bank), Tata
             Digital, and now Unico Connect, delivering high-impact solutions
             using React, TypeScript, Node.js, and modern frameworks like
@@ -34,7 +34,7 @@ const AboutContent: React.FC = () => {
           <ul className="list-disc list-inside space-y-3 text-mac-text-secondary">
             <li>
               <span className="font-medium">
-                Principal Lead at Unico Connect
+                Principal Engineer at Unico Connect
               </span>{" "}
               - Led a high-performing development team of 12 developers using
               JavaScript, React, Node, and CSS3.

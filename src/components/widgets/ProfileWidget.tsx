@@ -10,7 +10,7 @@ const ProfileWidget: React.FC = () => {
         </div>
         <h3 className="text-lg font-semibold">Angesh Chettiar</h3>
         <p className="text-sm text-mac-text-secondary mb-3">
-          Principal Lead <br />
+          Principal Engineer <br />
           (Frontend/Full-stack)
         </p>
 

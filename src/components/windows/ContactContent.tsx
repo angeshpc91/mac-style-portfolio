@@ -251,10 +251,10 @@ const ContactContent: React.FC = () => {
           <div className="mt-4 bg-white/70 p-5 rounded-lg">
             <h2 className="text-lg font-semibold mb-2">Availability</h2>
             <p className="text-mac-text-secondary">
-              I'm currently available for new opportunities as a Principal Lead.
-              With 11+ years of experience in JavaScript, TypeScript, and React,
-              I'm ready to help your team build robust, scalable frontend
-              systems.
+              I'm currently available for new opportunities as a Principal
+              Engineer. With 11+ years of experience in JavaScript, TypeScript,
+              and React, I'm ready to help your team build robust, scalable
+              frontend systems.
             </p>
           </div>
         </div>
